@@ -56,13 +56,14 @@ public class OutageNotice {
 			//execute the statement
 			preparedStmt.execute();
 			con.close();
-		
-			output = "Inserted successfully";
+			String newNotices = readNotices();
+			output = "{\"status\":\"success\", \"data\": \"" + newNotices + "\"}";
+			 
 			
 		}
 		catch (Exception e)
 		{
-			output = "Error while inserting";
+			output = "{\"status\":\"error\", \"data\":\"Error while inserting the notice.\"}";
 			System.err.println(e.getMessage()); 
 		}
 		
@@ -110,11 +111,7 @@ public class OutageNotice {
 				output += "<td>" + informerID + "</td>";
 				
 				// buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update'></td>"
-						+ "<td><form method='post' action='items.jsp'>"
-						+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-						+ "<input name='noticeID' type='hidden' value='" + noticeID + "'>"
-						+ "</form></td></tr>";
+				output += "<td><input name='btnUpdate'type='button' value='Update' class='btnUpdate btn btn-secondary' data-itemid='" + noticeID + "'></td><td><input name='btnRemove'type='button' value='Remove'class='btnRemove btn btn-danger' data-itemid='"+ noticeID + "'></td></tr>";
 			}
 			
 			con.close();
@@ -173,11 +170,7 @@ public class OutageNotice {
 				output += "<td>" + informerID + "</td>";
 					
 				// buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update'></td>"
-						+ "<td><form method='post' action='items.jsp'>"
-						+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-						+ "<input name='noticeID' type='hidden' value='" + noticeID1 + "'>"
-						+ "</form></td></tr>";
+				output += "<td><input name='btnUpdate'type='button' value='Update' class='btnUpdate btn btn-secondary' data-itemid='" + noticeID + "'></td><td><input name='btnRemove'type='button' value='Remove'class='btnRemove btn btn-danger' data-itemid='"+ noticeID + "'></td></tr>";
 			}
 				
 			con.close();
@@ -219,12 +212,13 @@ public class OutageNotice {
 			 // execute the statement
 			 preparedStmt.execute();
 			 con.close();
-			 output = "Updated successfully";
+			 String newNotices = readNotices();
+			 output = "{\"status\":\"success\", \"data\": \"" + newNotices + "\"}";
 		 	}
 		 	catch (Exception e)
 		 	{
-		 		output = "Error while updating the notice.";
-		 		System.err.println(e.getMessage());
+		 		output = "{\"status\":\"error\", \"data\":\"Error while inserting the notice.\"}";
+				System.err.println(e.getMessage());
 		 	}
 		 return output; 
 	}
@@ -249,11 +243,12 @@ public class OutageNotice {
 			// execute the statement
 			preparedStmt.execute();
 			con.close();
-			output = "Deleted successfully";
+			String newNotices = readNotices();
+			output = "{\"status\":\"success\", \"data\": \"" + newNotices + "\"}";
 		}
 		catch (Exception e)
 		{
-			output = "Error while deleting the notice.";
+			output = "{\"status\":\"error\", \"data\":\"Error while inserting the notice.\"}";
 			System.err.println(e.getMessage());
 		}
 		
