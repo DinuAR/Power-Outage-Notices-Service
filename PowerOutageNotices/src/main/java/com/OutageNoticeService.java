@@ -1,7 +1,5 @@
 package com;
 
-import model.OutageNotice;
-
 //For REST Service
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
