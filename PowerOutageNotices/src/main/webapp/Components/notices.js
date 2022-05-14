@@ -14,7 +14,7 @@ $(document).on("click", "#btnSave", function(event)
  		$("#alertError").text("");
  		$("#alertError").hide();
 		// Form validation-------------------
-		var status = validateItemForm();
+		var status = validateNoticeForm();
 		if (status != true)
  		{
  				$("#alertError").text(status);
@@ -31,7 +31,7 @@ $(document).on("click", "#btnSave", function(event)
  		dataType : "text",
  		complete : function(response, status)
  	{
- 		onItemSaveComplete(response.responseText, status);
+ 		onNoticeSaveComplete(response.responseText, status);
  	}
  });
 });
@@ -39,7 +39,7 @@ $(document).on("click", "#btnSave", function(event)
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event)
 {
-		$("#hidNoticeIDSave").val($(this).data("noticeID"));
+		$("#hidItemIDSave").val($(this).data("noticeid"));
  		$("#regionID").val($(this).closest("tr").find('td:eq(0)').text());
  		$("#group").val($(this).closest("tr").find('td:eq(1)').text());
  		$("#Description").val($(this).closest("tr").find('td:eq(2)').text());
@@ -80,11 +80,11 @@ $(document).on("click", ".btnRemove", function(event)
  		{
  			url : "NoticesAPI",
  			type : "DELETE",
- 			data : "noticeID=" + $(this).data("noticeID"),
+ 			data : "noticeID=" + $(this).data("noticeid"),
  			dataType : "text",
  			complete : function(response, status)
  		{
- 			onItemDeleteComplete(response.responseText, status);
+ 			onNoticeDeleteComplete(response.responseText, status);
  	}
  });
 });

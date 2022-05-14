@@ -35,8 +35,7 @@ public class OutageNotice {
 			}
 		
 			// create a prepared statement
-			String query = " insert into notices (`noticeID`,`regionID`,`group`,`Description`,`outageStartTime`, `outageEndTime`, `informerID`)"
-					+ " values (?, ?, ?, ?, ?, ?, ?)";
+			String query = " insert into notices (`noticeID`,`regionID`,`group`,`Description`,`outageStartTime`, `outageEndTime`, `informerID`)" + " values (?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 			// binding values
 			preparedStmt.setInt(1, 0);
@@ -105,7 +104,8 @@ public class OutageNotice {
 				output += "<td>" + informerID + "</td>";
 				
 				// buttons
-				output += "<td><input name='btnUpdate'type='button' value='Update' class='btnUpdate btn btn-secondary' data-itemid='" + noticeID + "'></td><td><input name='btnRemove'type='button' value='Remove'class='btnRemove btn btn-danger' data-itemid='"+ noticeID + "'></td></tr>";
+				output += "<td><input name='btnUpdate'type='button' value='Update' class='btnUpdate btn btn-secondary' data-noticeid='" + noticeID + "'></td><td><input name='btnRemove'type='button' value='Remove'class='btnRemove btn btn-danger' data-noticeid='"+ noticeID + "'></td></tr>";
+				
 			}
 			
 			con.close();
