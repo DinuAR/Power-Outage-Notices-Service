@@ -145,6 +145,6 @@ function onNoticeSaveComplete(response, status)
  				$("#alertError").text("Unknown error while saving..");
  				$("#alertError").show();
  			} 
- 				$("#hidNoticeIDSave").val("");
+ 				$("#hidItemIDSave").val("");
 				 $("#formItem")[0].reset();
 }

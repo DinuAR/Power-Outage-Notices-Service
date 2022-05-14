@@ -20,16 +20,16 @@ pageEncoding="ISO-8859-1"%>
  					<input id="regionID" name="regionID" type="text" class="form-control form-control-sm">
  					<br> 
  					Group:
- 					<input id="noticeGroup" name="noticeGroup" type="text" class="form-control form-control-sm">
+ 					<input id="group" name="group" type="text" class="form-control form-control-sm">
  					<br>
  					Description:
- 					<input id="description" name="description" type="text" class="form-control form-control-sm">
+ 					<input id="Description" name="Description" type="text" class="form-control form-control-sm">
  					<br> 
  					Outage Starts at:
- 					<input id="startTime" name="startTime" type="text" class="form-control form-control-sm">
+ 					<input id="outageStartTime" name="outageStartTime" type="text" class="form-control form-control-sm">
  					<br>
  					Outage Ends at:
- 					<input id="endTime" name="endTime" type="text" class="form-control form-control-sm">
+ 					<input id="outageEndTime" name="outageEndTime" type="text" class="form-control form-control-sm">
  					<br> 
  					Informer ID:
  					<input id="informerID" name="informerID" type="text" class="form-control form-control-sm">

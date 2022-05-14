@@ -24,7 +24,9 @@ public class NoticesAPI extends HttpServlet {
     }
 
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException 
+	{
 
 		String output = noticeObj.insertNotice(request.getParameter("regionID"),
 		request.getParameter("group"),
@@ -59,9 +61,11 @@ public class NoticesAPI extends HttpServlet {
 
 		 }
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException 
+	{
 		Map paras = getParasMap(request);
-		String output = noticeObj.updateNotice(paras.get("hidNoticeIDSave").toString(),
+		String output = noticeObj.updateNotice(paras.get("hidItemIDSave").toString(),
 			 paras.get("regionID").toString(),
 		     paras.get("group").toString(),
 			 paras.get("Description").toString(),
@@ -72,7 +76,9 @@ public class NoticesAPI extends HttpServlet {
 	}
 
 
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException 
+	{
 		Map paras = getParasMap(request);
 		String output = noticeObj.deleteNotice(paras.get("noticeID").toString());
 		response.getWriter().write(output);
