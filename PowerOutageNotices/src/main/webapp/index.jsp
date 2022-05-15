@@ -20,6 +20,7 @@
 		.container {
   			text-align: center;
   			border: 3px solid white;
+  			margin-top: 25%;
 		}
 		p.ex2 {
   			font-size: 50px;
@@ -37,15 +38,26 @@
 		a:hover, a:active {
   			background-color: red;
 		}
+		footer {
+			text-align: center;
+  			padding: 3px;
+  			background-color: #9A1822;
+  			color: white;
+		}
 	</style>
 </head>
 <body>
   <div class="container">
 
-  	<p class="ex2" style="color:white">Electro Grid</p>
+  	<p class="ex2" style="color:white">Electro Grid Landing Page</p>
   	<br>
-  	<a href="notices.jsp" target="_blank">Power Outage Notice Service</a>
+  	<a href="notices.jsp" target="_blank">Click Here to View Power Outage Notices</a>
 
   </div>
+  <br><br><br><br><br>
+	<footer>
+  					<p>Author: Ariyasena T.P.D.N - IT20429478</p>
+  					<p>SLIIT PAF Assignment2</a></p>
+	</footer>
 </body>
 </html>

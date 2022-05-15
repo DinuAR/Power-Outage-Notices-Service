@@ -43,6 +43,12 @@ pageEncoding="ISO-8859-1"%>
 		#formItem {
 			font-weight: 600;
 		}
+		footer {
+			text-align: center;
+  			padding: 3px;
+  			background-color: #9A1822;
+  			color: white;
+		}
 	</style>
 </head>
 <body>
@@ -59,7 +65,7 @@ pageEncoding="ISO-8859-1"%>
  					Group:
  					<input id="group" name="group" type="text" class="form-control form-control-sm">
  					<br>
- 					Description:
+ 					Description/Date:
  					<textarea id="Description" name="Description" type="text" class="form-control form-control-sm"></textarea>
  					<br> 
  					Outage Starts at:
@@ -83,7 +89,7 @@ pageEncoding="ISO-8859-1"%>
 					
 					<div class="view">
 					
-					<div id="divItemsGrid" align="right">
+					<div id="divItemsGrid">
 					<br>
  						<%
  							OutageNotice noticeObj = new OutageNotice();
@@ -95,5 +101,10 @@ pageEncoding="ISO-8859-1"%>
 				
 				
 	</div>
+	<br><br>
+	<footer>
+  					<p>Author: Ariyasena T.P.D.N - IT20429478</p>
+  					<p>SLIIT PAF Assignment2</a></p>
+	</footer>
 </body>
 </html>
