@@ -6,15 +6,52 @@ pageEncoding="ISO-8859-1"%>
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Notices Management</title>
+	<link rel="icon" type="image/x-icon" href="Components/elec.png">
 	<link rel="stylesheet" href="Views/bootstrap.min.css">
 	<script src="Components/jquery-3.6.0.min.js"></script>
 	<script src="Components/notices.js"></script>
+	
+	<style>
+		body {
+  			background-image: url('Components/power-grid.jpg');
+  			background-size: 100% 100%;
+  			background-repeat: no-repeat;
+  			background-attachment: fixed;
+		}
+		table, th, td {
+  			border: 1px solid #9A1822;
+  			border-collapse: collapse;
+		}
+		th, td {
+  			background-color: #eff542;
+		}
+		.elements {
+			display: flex;
+			justify-content: space-around;
+		}
+		hr {
+			background-color: black;
+    		border: 0 none;
+    		color: #eee;
+    		height: 2px;
+		}
+		input[type=text], textarea[type=text] {
+  			border: 1px solid red;
+  			border-radius: 4px;
+  			color: black;
+		}
+		#formItem {
+			font-weight: 600;
+		}
+	</style>
 </head>
 <body>
+	
 	<div class="container">
-		<div class="row">
-			<div class="col-6">
-				<h1>Notices Management</h1>
+			<br>
+				<h1 style="color:#9A1822" align="center">Power Outage Notices</h1><hr>
+			<div class="elements">
+				<div class="form">
 				<form id="formItem" name="formItem">
  					Region ID:
  					<input id="regionID" name="regionID" type="text" class="form-control form-control-sm">
@@ -23,7 +60,7 @@ pageEncoding="ISO-8859-1"%>
  					<input id="group" name="group" type="text" class="form-control form-control-sm">
  					<br>
  					Description:
- 					<input id="Description" name="Description" type="text" class="form-control form-control-sm">
+ 					<textarea id="Description" name="Description" type="text" class="form-control form-control-sm"></textarea>
  					<br> 
  					Outage Starts at:
  					<input id="outageStartTime" name="outageStartTime" type="text" class="form-control form-control-sm">
@@ -39,17 +76,24 @@ pageEncoding="ISO-8859-1"%>
  					<input type="hidden" id="hidItemIDSave"name="hidItemIDSave" value="">
 				</form>
 				
+				
 					<div id="alertSuccess" class="alert alert-success"></div>
 					<div id="alertError" class="alert alert-danger"></div>
+					</div>
+					
+					<div class="view">
+					
+					<div id="divItemsGrid" align="right">
 					<br>
-					<div id="divItemsGrid">
  						<%
  							OutageNotice noticeObj = new OutageNotice();
  							out.print(noticeObj.readNotices());
  						%>
 					</div>
+					</div>
 			</div>
-		</div> 
+				
+				
 	</div>
 </body>
 </html>
